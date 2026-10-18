@@ -4,7 +4,7 @@ STEPX Neo 上的最小演示：Agent 向 `demo_inbox.txt` 写入文本，App 逐
 
 ## 下载
 
-见 Releases 中的 `AgentTypeDemo-1.0.0.apk`。
+见 Releases 中的 `AgentTypeDemo-1.1.0.apk`。
 
 ## 应用信息
 
@@ -12,10 +12,18 @@ STEPX Neo 上的最小演示：Agent 向 `demo_inbox.txt` 写入文本，App 逐
 | --- | --- |
 | 应用名 | Agent 打字机 |
 | 包名 | com.stepx.typedemo |
-| 版本 | 1.0.0 (versionCode 1) |
+| 版本 | 1.1.0 (versionCode 2) |
 | minSdk / targetSdk | 23 / 34 |
 | 体积 | 约 21 KB |
 | 权限 | 无 |
+
+## 双向对话（1.1.0）
+
+- 下方输入框写内容，点「发送」→ 追加到 `outbox.txt`
+- Agent 读取 `outbox.txt`，把回复写入 `inbox.txt`
+- App 轮询 `inbox.txt`，新消息逐字打出
+
+文件格式：`inbox.txt` 首行 `#序号`，其余为正文；`outbox.txt` 每行 `序号|时间|内容`。
 
 ## 原理
 
